@@ -2,7 +2,6 @@ import React from 'react';
 import { Modal, Button } from 'antd';
 
 import { ModalProvider, ModalConsumer } from './context';
-import Root from './root'
 
 const Modal1 = ({ hideModal, ...otherProps }) => (
   <Modal
@@ -28,18 +27,17 @@ const Modal2 = ({ hideModal, ...otherProps }) => (
   </Modal>
 );
 
-const Modal3 = (props) => {
-  return (
-    <Modal
-      title="Modal 3"
-      visible
-      onCancel={() => { console.log('cancelled') }}
-      // onOk={() => {console.log('ok!')}}
-    >
-      <p>This is modal 3</p>
-    </Modal>
-  );
-}
+const Modal3 = ({ hideModal, ...otherProps }) => (
+  <Modal
+    title="Modal 3"
+    visible
+    onCancel={hideModal}
+    onOk={hideModal}
+    {...otherProps}
+  >
+    <p>This is modal 3</p>
+  </Modal>
+);
 
 export default class ModalComponent extends React.Component {
   render () {
@@ -51,23 +49,27 @@ export default class ModalComponent extends React.Component {
         </div>
         <ModalProvider>
           <ModalConsumer>
-            {({ component: Component, hideModal, props }) => {
-              console.log(props)
-              return (
-                Component ? <Component onCancel={() => console.log('cancelled')} /> : null
-              )
-            }}
+            {({ component: Component, hideModal, props }) => (
+                Component ? <Component onCancel={hideModal} {...props} /> : null
+            )}
           </ModalConsumer>
           <ModalConsumer>
-            {({ showModal }) => {
+            {({ showModal, hideModal }) => {
               return (
                 <React.Fragment>
                   {/* set additional props on modal here... */}
-                  <Button type="primary" onClick={() => showModal(Modal1)}>Modal 1</Button>
+                  <Button type="primary" onClick={() => showModal(Modal1, {
+                    onCancel: () => {
+                      hideModal();
+                      console.log("cancel 1");
+                    }}
+                  )}>Modal 1</Button>
                   <Button type="primary" onClick={() => showModal(Modal2)}>Modal 2</Button>
                   <Button type="primary" onClick={() => showModal(Modal3, {
-                    onCancel: () => { console.log('cancelled') },
-                    onOk: () => {console.log('ok!')}
+                    onCancel: () => {
+                      console.log("cancel 3");
+                      hideModal();
+                    }
                   })}>Modal 3</Button>
                 </React.Fragment>
               )

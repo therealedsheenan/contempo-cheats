@@ -3,3 +3,17 @@ body {
   padding: 0;
   font-family: sans-serif;
 }
+
+.Content {
+  display: flex;
+}
+
+.Content .ant-menu {
+  position: fixed;
+  left: 0;
+  height: 100%;
+}
+
+.Content .Content-main {
+  width: 100%;
+}
