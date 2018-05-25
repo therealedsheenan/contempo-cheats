@@ -6,6 +6,7 @@ import Modal from './components/Modal';
 import RenderProp from './components/RenderProp';
 import Home from './components/Home';
 import Theme from './components/Theme';
+import Todo from './components/Todo';
 
 import logo from './logo.svg';
 import './App.css';
@@ -31,6 +32,9 @@ class App extends Component {
                 <Link to="/render-prop">RenderProp</Link>
               </Menu.Item>
               <Menu.Item key="4">
+                <Link to="/todo">To-do</Link>
+              </Menu.Item>
+              <Menu.Item key="5">
                 <Link to="/Theme">Theme</Link>
               </Menu.Item>
             </Menu>
@@ -38,6 +42,7 @@ class App extends Component {
               <Route exact path="/" component={Home} />
               <Route exact path="/modal" component={Modal} />
               <Route exact path="/render-prop" component={RenderProp} />
+              <Route exact path="/todo" component={Todo} />
               <Route exact path="/theme" component={Theme} />
             </section>
           </main>
