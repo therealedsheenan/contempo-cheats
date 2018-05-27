@@ -4,18 +4,11 @@
         "commonjs": true,
         "es6": true
     },
-    "extends": ["eslint:recommended", "plugin:react/recommended"],
-    "parserOptions": {
-        "ecmaFeatures": {
-            "experimentalObjectRestSpread": true,
-            "jsx": true
-        },
-        "sourceType": "module"
-    },
+    "extends": ["airbnb", "plugin:react/recommended", "plugin:prettier/recommended"],
     "rules": {
         "indent": [
             "error",
-            "tab"
+            2
         ],
         "linebreak-style": [
             "error",
@@ -28,6 +21,16 @@
         "semi": [
             "error",
             "always"
+        ],
+        "react/no-unescaped-entities": 0,
+        "no-console": 0,
+        "class-methods-use-this": 0,
+        "import/no-named-as-default": 0,
+        "react/jsx-filename-extension": [
+            "error",
+            {
+              "extensions": [".js", ".jsx"]
+            }
         ]
     }
 }

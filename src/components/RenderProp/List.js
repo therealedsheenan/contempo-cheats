@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-class List extends React.Component {
+class SelectList extends React.Component {
   static propTypes = {
     render: PropTypes.func.isRequired,
     url: PropTypes.string.isRequired
@@ -45,4 +45,4 @@ class List extends React.Component {
   }
 }
 
-export default List;
+export default SelectList;
