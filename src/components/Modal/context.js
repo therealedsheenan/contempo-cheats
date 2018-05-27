@@ -1,4 +1,5 @@
 import React, { Component, createContext } from "react";
+import PropTypes from "prop-types";
 
 const ModalContext = createContext({
   component: null,
@@ -8,6 +9,10 @@ const ModalContext = createContext({
 });
 
 export class ModalProvider extends Component {
+  static propTypes = {
+    children: PropTypes.element.isRequired
+  };
+
   showModal = (component, props = {}) => {
     this.setState({
       component,
@@ -15,11 +20,12 @@ export class ModalProvider extends Component {
     });
   };
 
-  hideModal = () =>
+  hideModal = () => {
     this.setState({
       component: null,
       props: {}
     });
+  };
 
   state = {
     component: null,

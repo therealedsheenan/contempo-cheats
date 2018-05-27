@@ -1,7 +1,7 @@
-import React from 'react';
-import PropTypes from 'prop-types';
+import React from "react";
+import PropTypes from "prop-types";
 
-class SelectList extends React.Component {
+export default class SelectList extends React.Component {
   static propTypes = {
     render: PropTypes.func.isRequired,
     url: PropTypes.string.isRequired
@@ -37,6 +37,7 @@ class SelectList extends React.Component {
   resetState = () => this.setState(this.initState);
 
   componentDidMount() {
+    /* eslint-disable */
     this.setState({ isLoading: true }, this.fetchData);
   }
 
@@ -44,5 +45,3 @@ class SelectList extends React.Component {
     return this.props.render(this.state);
   }
 }
-
-export default SelectList;
