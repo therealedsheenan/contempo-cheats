@@ -1,7 +1,9 @@
-import React from 'react';
+import React from "react";
 
-export default () => (
-  <div>
-    <p>This is a repository for various patterns in React.</p>
-  </div>
+const Home = () => (
+	<div>
+		<p>This is a repository for various patterns in React.</p>
+	</div>
 );
+
+export default Home;
