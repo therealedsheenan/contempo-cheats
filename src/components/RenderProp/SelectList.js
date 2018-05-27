@@ -37,7 +37,7 @@ export default class SelectList extends React.Component {
   resetState = () => this.setState(this.initState);
 
   componentDidMount() {
-    /* eslint-disable */
+    // eslint-disable-next-line
     this.setState({ isLoading: true }, this.fetchData);
   }
 

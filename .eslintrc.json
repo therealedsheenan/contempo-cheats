@@ -17,6 +17,8 @@
     "extends": ["airbnb", "plugin:react/recommended", "plugin:prettier/recommended"],
     "rules": {
         "import/no-named-as-default": "off",
+        "import/no-named-as-default-member": "off",
+        "react/no-unused-state": "off",
         "react/sort-comp": "off",
         "react/jsx-no-bind": "off",
         "indent": [

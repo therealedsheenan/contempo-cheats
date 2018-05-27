@@ -1,13 +1,15 @@
-import React, { Component } from 'react';
-import PropTypes from 'prop-types';
+import React, { Component } from "react";
+import PropTypes from "prop-types";
 
 class Todo extends Component {
   static defaultProps = {};
 
-  static propTypes = {};
+  static propTypes = {
+    render: PropTypes.func.isRequired
+  };
 
   initState = {
-    newTodo: '',
+    newTodo: "",
     todos: []
   };
 
@@ -22,7 +24,10 @@ class Todo extends Component {
   };
 
   addTodo = () => {
-    this.setState(prevState => ({ newTodo: '', todos: prevState.todos.concat(this.state.newTodo) }));
+    this.setState(prevState => ({
+      newTodo: "",
+      todos: prevState.todos.concat(this.state.newTodo)
+    }));
   };
 
   removeTodo = value => {
