@@ -2,9 +2,9 @@
 {
   "printWidth": 80,
   "bracketSpacing": true,
-  "singleQuote": true,
+  "singleQuote": false,
   "trailingComma": "none",
   "semi": true,
   "arrowParens": "avoid",
-  "jsxBracketSameLine": true
+  "jsxBracketSameLine": false
 }
