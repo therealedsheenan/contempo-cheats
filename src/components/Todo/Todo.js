@@ -35,17 +35,13 @@ class Todo extends Component {
   };
 
   render() {
-    return (
-      <div>
-        {this.props.render({
-          ...this.state,
-          removeTodo: this.removeTodo,
-          addTodo: this.addTodo,
-          todoTyping: this.todoTyping,
-          resetStates: this.resetStates
-        })}
-      </div>
-    );
+    return this.props.render({
+      ...this.state,
+      removeTodo: this.removeTodo,
+      addTodo: this.addTodo,
+      todoTyping: this.todoTyping,
+      resetStates: this.resetStates
+    });
   }
 }
 

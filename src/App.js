@@ -11,6 +11,7 @@ import RenderProp from "./components/RenderProp";
 import Home from "./components/Home";
 import Theme from "./components/Theme";
 import Todo from "./components/Todo";
+import GameLeaderSelect from "./components/GameLeaderSelect";
 
 import logo from "./logo.svg";
 import "./App.css";
@@ -37,7 +38,10 @@ const App = () => (
             <Rlink to="/todo">To-do</Rlink>
           </Menu.Item>
           <Menu.Item key="5">
-            <Rlink to="/Theme">Theme</Rlink>
+            <Rlink to="/theme">Theme</Rlink>
+          </Menu.Item>
+          <Menu.Item key="6">
+            <Rlink to="/game-leader-select">Game Leader Selection</Rlink>
           </Menu.Item>
         </Menu>
         <section className="Content-main">
@@ -46,6 +50,11 @@ const App = () => (
           <Route exact path="/render-prop" component={RenderProp} />
           <Route exact path="/todo" component={Todo} />
           <Route exact path="/theme" component={Theme} />
+          <Route
+            exact
+            path="/game-leader-select"
+            component={GameLeaderSelect}
+          />
         </section>
       </main>
     </Router>
