@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import PropTypes from "prop-types";
 
 class DecideGame extends Component {
   static Team1 = ({ won }) =>
@@ -19,6 +20,13 @@ class DecideGame extends Component {
     ) : (
       <div>Team 3 lost! </div>
     );
+
+  static propTypes = {
+    children: PropTypes.oneOf([
+      PropTypes.arrayOf(PropTypes.node),
+      PropTypes.node
+    ]).isRequired
+  };
 
   state = {
     winnerTeam: ""
