@@ -12,6 +12,7 @@ import Home from "./components/Home";
 import Theme from "./components/Theme";
 import Todo from "./components/Todo";
 import GameLeaderSelect from "./components/GameLeaderSelect";
+import CalculatorGame from "./components/CalculatorGame";
 
 import logo from "./logo.svg";
 import "./App.css";
@@ -43,6 +44,9 @@ const App = () => (
           <Menu.Item key="6">
             <Rlink to="/game-leader-select">Game Leader Selection</Rlink>
           </Menu.Item>
+          <Menu.Item key="7">
+            <Rlink to="/calculator">Calculator Game</Rlink>
+          </Menu.Item>
         </Menu>
         <section className="Content-main">
           <Route exact path="/" component={Home} />
@@ -50,6 +54,7 @@ const App = () => (
           <Route exact path="/render-prop" component={RenderProp} />
           <Route exact path="/todo" component={Todo} />
           <Route exact path="/theme" component={Theme} />
+          <Route exact path="/calculator" component={CalculatorGame} />
           <Route
             exact
             path="/game-leader-select"
