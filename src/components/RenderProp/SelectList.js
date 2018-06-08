@@ -3,7 +3,7 @@ import PropTypes from "prop-types";
 
 export default class SelectList extends React.Component {
   static propTypes = {
-    render: PropTypes.func.isRequired,
+    children: PropTypes.func.isRequired,
     url: PropTypes.string.isRequired
   };
 
@@ -49,6 +49,6 @@ export default class SelectList extends React.Component {
   }
 
   render() {
-    return this.props.render(this.getStateAndHelpers());
+    return this.props.children(this.getStateAndHelpers());
   }
 }

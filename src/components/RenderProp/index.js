@@ -6,9 +6,8 @@ import SelectList from "./SelectList";
 const RenderProp = () => (
   <div style={{ marginTop: 20 }}>
     <h3>Select box List</h3>
-    <SelectList
-      url="https://jsonplaceholder.typicode.com/photos"
-      render={({ list, isLoading, selectedItem, handleSelectItem }) => (
+    <SelectList url="https://jsonplaceholder.typicode.com/photos">
+      {({ list, isLoading, selectedItem, handleSelectItem }) => (
         <div>
           {isLoading ? (
             <Spin size="large" />
@@ -39,12 +38,11 @@ const RenderProp = () => (
           )}
         </div>
       )}
-    />
+    </SelectList>
     <hr />
     <h3>List type</h3>
-    <SelectList
-      url="https://jsonplaceholder.typicode.com/photos"
-      render={({ list, isLoading }) => (
+    <SelectList url="https://jsonplaceholder.typicode.com/photos">
+      {({ list, isLoading }) => (
         <div>
           {isLoading ? (
             <Spin size="large" />
@@ -64,7 +62,7 @@ const RenderProp = () => (
           )}
         </div>
       )}
-    />
+    </SelectList>
   </div>
 );
 
