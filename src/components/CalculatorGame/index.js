@@ -1,19 +1,18 @@
 import React from "react";
 
 class CalculatorGame extends React.Component {
-  randomNumber = () => Math.floor(10 * Math.random());
+  randomTargetvalue = () => Math.floor(10 * Math.random());
+  getNumbers = () =>
+    Array.from({ length: 10 }).map(() => 1 + Math.floor(10 * Math.random()));
 
   initialState = {
-    targetValue: this.randomNumber(),
+    targetValue: this.randomTargetvalue(),
+    randomNumbers: this.getNumbers(),
     selectedNumbers: [],
     gameStatus: ""
   };
 
   state = this.initialState;
-
-  randomNumbers = Array.from({ length: 10 }).map(
-    () => 1 + Math.floor(this.state.targetValue * Math.random())
-  );
 
   handleButtonSelect = val => {
     // calculate game status
@@ -29,7 +28,8 @@ class CalculatorGame extends React.Component {
   resetGame = () =>
     this.setState({
       ...this.initialState,
-      targetValue: this.randomNumber()
+      targetValue: this.randomTargetvalue(),
+      randomNumbers: this.getNumbers()
     });
 
   calculate() {
@@ -57,7 +57,7 @@ class CalculatorGame extends React.Component {
     return (
       <div>
         <h1>Calculate this: {state.targetValue}</h1>
-        {this.randomNumbers.map((val, key) => (
+        {this.state.randomNumbers.map((val, key) => (
           <button
             disabled={state.gameStatus}
             onClick={() => this.handleButtonSelect(val)}
