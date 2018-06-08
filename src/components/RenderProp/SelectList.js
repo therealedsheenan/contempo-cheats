@@ -28,7 +28,6 @@ export default class SelectList extends React.Component {
   state = {
     list: [],
     selectedItem: {},
-    handleSelectItem: this.handleSelectItem,
     isLoading: false
   };
 
@@ -36,12 +35,20 @@ export default class SelectList extends React.Component {
 
   resetState = () => this.setState(this.initState);
 
+  // return to be exposed objects
+  getStateAndHelpers() {
+    return {
+      ...this.state,
+      handleSelectItem: this.handleSelectItem
+    };
+  }
+
   componentDidMount() {
     // eslint-disable-next-line
     this.setState({ isLoading: true }, this.fetchData);
   }
 
   render() {
-    return this.props.render(this.state);
+    return this.props.render(this.getStateAndHelpers());
   }
 }
