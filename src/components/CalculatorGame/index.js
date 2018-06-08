@@ -1,10 +1,10 @@
 import React from "react";
 
 class CalculatorGame extends React.Component {
-  randomNumbers = Math.floor(10 * Math.random());
+  randomNumber = () => Math.floor(10 * Math.random());
 
   initialState = {
-    targetValue: this.randomNumbers,
+    targetValue: this.randomNumber(),
     selectedNumbers: [],
     gameStatus: ""
   };
@@ -26,7 +26,11 @@ class CalculatorGame extends React.Component {
     );
   };
 
-  resetGame = () => this.setState(this.initialState);
+  resetGame = () =>
+    this.setState({
+      ...this.initialState,
+      targetValue: this.randomNumber()
+    });
 
   calculate() {
     if (this.state.selectedNumbers.length > 1) {
