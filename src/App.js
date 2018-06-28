@@ -13,6 +13,7 @@ import Theme from "./components/Theme";
 import Todo from "./components/Todo";
 import GameLeaderSelect from "./components/GameLeaderSelect";
 import CalculatorGame from "./components/CalculatorGame";
+import ReactLinkify from "./components/ReactLinkify";
 
 import logo from "./logo.svg";
 import "./App.css";
@@ -47,6 +48,9 @@ const App = () => (
           <Menu.Item key="7">
             <Rlink to="/calculator">Calculator Game</Rlink>
           </Menu.Item>
+          <Menu.Item key="8">
+            <Rlink to="/linkify">React linkify</Rlink>
+          </Menu.Item>
         </Menu>
         <section className="Content-main">
           <Route exact path="/" component={Home} />
@@ -60,6 +64,7 @@ const App = () => (
             path="/game-leader-select"
             component={GameLeaderSelect}
           />
+          <Route exact path="/linkify" component={ReactLinkify} />
         </section>
       </main>
     </Router>
