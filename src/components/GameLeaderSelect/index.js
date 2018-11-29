@@ -33,6 +33,10 @@ class DecideGame extends Component {
   };
 
   componentWillMount() {
+    this.randomizeWinner();
+  }
+
+  randomizeWinner = () => {
     this.setState({
       winnerTeam: Math.floor(Math.random() * (4 - 1) + 1)
     });

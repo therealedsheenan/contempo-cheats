@@ -24,10 +24,12 @@ class Todo extends Component {
   };
 
   addTodo = () => {
-    this.setState(prevState => ({
-      newTodo: "",
-      todos: prevState.todos.concat(this.state.newTodo)
-    }));
+    if (this.state.newTodo) {
+      this.setState(prevState => ({
+        newTodo: "",
+        todos: prevState.todos.concat(this.state.newTodo)
+      }));
+    }
   };
 
   removeTodo = value => {
