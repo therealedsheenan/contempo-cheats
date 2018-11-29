@@ -5,7 +5,7 @@ class Todo extends Component {
   static defaultProps = {};
 
   static propTypes = {
-    render: PropTypes.func.isRequired
+    children: PropTypes.func.isRequired
   };
 
   initState = {
@@ -37,7 +37,7 @@ class Todo extends Component {
   };
 
   render() {
-    return this.props.render({
+    return this.props.children({
       ...this.state,
       removeTodo: this.removeTodo,
       addTodo: this.addTodo,

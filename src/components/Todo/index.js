@@ -5,15 +5,8 @@ import Todo from "./Todo";
 
 const Todos = () => (
   <div>
-    <Todo
-      render={({
-        todoTyping,
-        newTodo,
-        todos,
-        addTodo,
-        removeTodo,
-        resetStates
-      }) => (
+    <Todo>
+      {({ todoTyping, newTodo, todos, addTodo, removeTodo, resetStates }) => (
         <div>
           <Button onClick={resetStates}>Reset</Button>
           <Input.Group>
@@ -39,7 +32,7 @@ const Todos = () => (
           />
         </div>
       )}
-    />
+    </Todo>
   </div>
 );
 
